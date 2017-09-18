@@ -9,7 +9,7 @@ import android.net.NetworkInfo;
 
 /**
  * <b>
- * 检查网络 -- 需要加权限
+ * 检查网络 -- 需要加权限 --> android.permission.ACCESS_NETWORK_STATE
  * 其中包括 1.是否有网络 2.是否是wifi连接 3.打开网络设置
  * </b>
  * Created by 1900 on 2017/9/13.
