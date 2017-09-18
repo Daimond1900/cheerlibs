@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.wl.daydayup.mcheerlibs.utils.LogUtils;
 import com.wl.daydayup.mcheerlibs.utils.NetUtils;
+import com.wl.daydayup.mcheerlibs.utils.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +22,12 @@ public class MainActivity extends AppCompatActivity {
     Button mTestIswifiBt;
     @BindView(R.id.test_opensetting_bt)
     Button mTestOpensettingBt;
+    @BindView(R.id.test_defualt_toast_bt)
+    Button mTestToastBt;
+    @BindView(R.id.test_changeBg_toast_bt)
+    Button mTestChangeBgToastBt;
+    @BindView(R.id.test_imgtoast_bt)
+    Button mTestImgtoastBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +36,12 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.test_isnet_bt, R.id.test_iswifi_bt, R.id.test_opensetting_bt})
+    @OnClick({R.id.test_isnet_bt,
+            R.id.test_iswifi_bt,
+            R.id.test_opensetting_bt,
+            R.id.test_defualt_toast_bt,
+            R.id.test_changeBg_toast_bt,
+            R.id.test_imgtoast_bt})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.test_isnet_bt:
@@ -50,6 +62,21 @@ public class MainActivity extends AppCompatActivity {
                 if (!NetUtils.isConnected(this)) {
                     NetUtils.openSetting(this);
                 }
+                break;
+            case R.id.test_defualt_toast_bt:
+                new ToastUtils.ToastBuilder(this)
+                        .build().showToast("默认土司");
+                break;
+            case R.id.test_changeBg_toast_bt:
+                new ToastUtils.ToastBuilder(this)
+                        .setToastBgColor(android.R.color.holo_green_light)
+                        .build().showToast("改变背景颜色的土司");
+                break;
+            case R.id.test_imgtoast_bt:
+                new ToastUtils.ToastBuilder(this)
+                        .setToastImage(ToastUtils.ToastImage.SUCCESS)
+                        .setToastBgColor(android.R.color.holo_purple)
+                        .build().showToast("我是自定义土司");
                 break;
         }
     }

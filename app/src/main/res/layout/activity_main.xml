@@ -34,4 +34,33 @@
             android:text="打开设置" />
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/test_defualt_toast_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="默认土司" />
+
+        <Button
+            android:id="@+id/test_changeBg_toast_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="背景土司" />
+
+        <Button
+            android:id="@+id/test_imgtoast_bt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="图片土司" />
+
+    </LinearLayout>
+
 </LinearLayout>
